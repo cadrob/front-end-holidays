@@ -1,10 +1,35 @@
-{
-  "name": "Costa Adeje Gran Hotel",
-  "hotel": "Costa Adeje, Tenerife",
-  "date": "2014-07-03",
-  "duration": "7 days",
-  "depart_from": "East Midlands",
-  "guests": "2 Adults, 2 children & 1 infant",
-  "price": 1136.5,
-  "star": 5
-}
+[
+  {
+    "id": "0001",
+    "name": "Costa Adeje Gran Hotel",
+    "hotel": "Costa Adeje, Tenerife",
+    "date": "2014-07-03",
+    "duration": "7 days",
+    "depart_from": "East Midlands",
+    "guests": "2 Adults, 2 children & 1 infant",
+    "price": 1136.5,
+    "star": 5
+  },
+  {
+    "id": "0002",
+    "name": "Aguamarina Golf Hotel and Apartments",
+    "hotel": "Costa Adeje, Tenerife",
+    "date": "2014-07-03",
+    "duration": "7 days",
+    "depart_from": "Manchester",
+    "guests": "2 Adults & 2 children",
+    "price": 499.99,
+    "star": 4
+  },
+  {
+    "id": "0003",
+    "name": "Laguna Park II",
+    "hotel": "Costa Adeje, Tenerife",
+    "date": "2014-05-27",
+    "duration": "7 days",
+    "depart_from": "Liverpool",
+    "guests": "2 Adults & 1 child",
+    "price": 696.8,
+    "star": 3
+  }
+]

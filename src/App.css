@@ -3,6 +3,7 @@
   background: url(../src/assets/background.jpg);
   background-attachment: fixed;
   overflow: hidden;
+  height: 100vh;
 }
 
 .main-container {

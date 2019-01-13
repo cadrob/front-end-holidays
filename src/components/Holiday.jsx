@@ -92,7 +92,7 @@ class Holiday extends Component {
     let starsicons = [];
     for (let i = 0; i < stars; i++) {
       starsicons.push(
-        <FontAwesomeIcon icon={faStar} color="#FFCF05" size="xs" />
+        <FontAwesomeIcon key={i} icon={faStar} color="#FFCF05" size="xs" />
       );
     }
 

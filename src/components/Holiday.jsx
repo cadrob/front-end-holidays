@@ -2,16 +2,22 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import "../Holiday.css";
+import image1 from "../assets/image_01.png";
+import image2 from "../assets/image_02.png";
+import image3 from "../assets/image_03.png";
+
+let Backgrounds = [image1, image2, image3];
 
 class Holiday extends Component {
   state = {
-    collapsed: true,
+    open: false,
     info: null,
     isLoading: true
   };
   render() {
     if (this.state.isLoading) return <p>Loading...</p>;
     const {
+      id,
       name,
       hotel,
       price,
@@ -20,8 +26,12 @@ class Holiday extends Component {
       depart_from,
       guests
     } = this.state.info;
+
+    let sectionStyle = {
+      backgroundImage: `url(${Backgrounds[id]})`
+    };
     return (
-      <div className="holiday-container">
+      <div className="holiday-container" style={sectionStyle}>
         <div className="holiday-top">
           <header>
             {name} <p>{hotel}</p>
@@ -31,41 +41,35 @@ class Holiday extends Component {
           </div>
         </div>
         <div className="wrap-collabsible">
-          <input
-            id="collapsible"
-            className="toggle"
-            type="checkbox"
-            onClick={this.handleCollapse}
-          />
-          <label htmlFor="collapsible" className="lbl-toggle">
+          <button className="btn-collapse" onClick={this.handleCollapse}>
             <p>
               <strong>{date} </strong>for <strong>{duration} </strong>from {""}
               <strong>{depart_from}</strong>, {guests}
             </p>
-
-            {this.state.collapsed && (
+            {!this.state.open && (
               <FontAwesomeIcon icon={faAngleRight} color="white" size="lg" />
             )}
-            {!this.state.collapsed && (
+            {this.state.open && (
               <FontAwesomeIcon icon={faAngleDown} color="white" size="lg" />
             )}
-          </label>
-          <div className="collapsible-content">
-            <div className="content-inner">
-              <p>
-                Overview If you're looking for something special for your
-                holiday to Tenerife, the five-star Costa Adeje Gran Hotel could
-                be the perfect choice. It's an impressive hotel in the resort of
-                Costa Adeje, with brilliant views over the Playa del Duque
-                beach. The area offers relaxation, nightlife and a lovely
-                selection of shops and restaurants. The hotel itself is a deluxe
-                property, surrounded by countryside, with amazing views of the
-                Atlantic Ocean. This stylish hotel is a great match for couples,
-                families and friends who are looking for a tranquil holiday with
-                beautiful beaches and lots of things to see and do.
-              </p>
-              <button>BOOK NOW</button>
-            </div>
+          </button>
+          <div
+            id="demo"
+            className={"collapse" + (this.state.open ? " in" : "")}
+          >
+            <p>
+              Overview If you're looking for something special for your holiday
+              to Tenerife, the five-star Costa Adeje Gran Hotel could be the
+              perfect choice. It's an impressive hotel in the resort of Costa
+              Adeje, with brilliant views over the Playa del Duque beach. The
+              area offers relaxation, nightlife and a lovely selection of shops
+              and restaurants. The hotel itself is a deluxe property, surrounded
+              by countryside, with amazing views of the Atlantic Ocean. This
+              stylish hotel is a great match for couples, families and friends
+              who are looking for a tranquil holiday with beautiful beaches and
+              lots of things to see and do.
+            </p>
+            <button>BOOK NOW</button>
           </div>
         </div>
       </div>
@@ -76,8 +80,7 @@ class Holiday extends Component {
   }
 
   handleCollapse = () => {
-    if (this.state.collapsed === true) this.setState({ collapsed: false });
-    else this.setState({ collapsed: true });
+    this.setState({ open: !this.state.open });
   };
 }
 

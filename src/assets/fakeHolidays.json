@@ -1,6 +1,6 @@
 [
   {
-    "id": "0001",
+    "id": 0,
     "name": "Costa Adeje Gran Hotel",
     "hotel": "Costa Adeje, Tenerife",
     "date": "2014-07-03",
@@ -11,7 +11,7 @@
     "star": 5
   },
   {
-    "id": "0002",
+    "id": 1,
     "name": "Aguamarina Golf Hotel and Apartments",
     "hotel": "Costa Adeje, Tenerife",
     "date": "2014-07-03",
@@ -22,7 +22,7 @@
     "star": 4
   },
   {
-    "id": "0003",
+    "id": 2,
     "name": "Laguna Park II",
     "hotel": "Costa Adeje, Tenerife",
     "date": "2014-05-27",

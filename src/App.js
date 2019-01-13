@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import SortButtons from "../src/components/SortButtons";
 import Holiday from "../src/components/Holiday";
-import "./Collapse.css";
 import Data from "../src/assets/fakeHolidays.json";
 class App extends Component {
   state = {

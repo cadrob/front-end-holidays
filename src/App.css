@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background: url(../src/assets/background.jpg);
+  background-attachment: fixed;
   overflow: hidden;
 }
 

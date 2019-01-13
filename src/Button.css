@@ -24,3 +24,16 @@
   background-color: #00aee1;
   color: white;
 }
+.sort-button-selected {
+  background-color: #00aee1;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  color: white;
+  height: 50px;
+  margin: 20px;
+  width: 300px;
+  font-size: 15px;
+  border: none;
+  box-shadow: 0px 1px 1px 0px #888888;
+  cursor: grab;
+}

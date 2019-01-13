@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleRight,
+  faAngleDown,
+  faStar
+} from "@fortawesome/free-solid-svg-icons";
 import "../Holiday.css";
 import image1 from "../assets/image_01.png";
 import image2 from "../assets/image_02.png";
@@ -24,7 +28,8 @@ class Holiday extends Component {
       date,
       duration,
       depart_from,
-      guests
+      guests,
+      star
     } = this.state.info;
 
     let sectionStyle = {
@@ -34,13 +39,13 @@ class Holiday extends Component {
       <div className="holiday-container" style={sectionStyle}>
         <div className="holiday-top">
           <header>
-            {name} <p>{hotel}</p>
+            {name} {this.getStars(star)} <p>{hotel}</p>
           </header>
           <div className="holiday-price">
             <p>holiday price</p>£{price}
           </div>
         </div>
-        <div className="wrap-collabsible">
+        <div className="wrap-collapsible">
           <button className="btn-collapse" onClick={this.handleCollapse}>
             <p>
               <strong>{date} </strong>for <strong>{duration} </strong>from {""}
@@ -54,7 +59,7 @@ class Holiday extends Component {
             )}
           </button>
           <div
-            id="demo"
+            id="content"
             className={"collapse" + (this.state.open ? " in" : "")}
           >
             <p>
@@ -81,6 +86,17 @@ class Holiday extends Component {
 
   handleCollapse = () => {
     this.setState({ open: !this.state.open });
+  };
+
+  getStars = stars => {
+    let starsicons = [];
+    for (let i = 0; i < stars; i++) {
+      starsicons.push(
+        <FontAwesomeIcon icon={faStar} color="#FFCF05" size="xs" />
+      );
+    }
+
+    return starsicons;
   };
 }
 

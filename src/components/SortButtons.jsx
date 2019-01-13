@@ -1,21 +1,78 @@
-import React from "react";
+import React, { Component } from "react";
 import "../Button.css";
 import "../App.css";
+import * as sort from "../utils/sort";
 
-const SortButtons = props => {
-  return (
-    <div className="select-container">
-      <button className="sort-button">
-        sort <strong>alphabetically</strong>
-      </button>
-      <button className="sort-button">
-        sort by <strong>price</strong>
-      </button>
-      <button className="sort-button">
-        sort by star <strong>rating</strong>
-      </button>
-    </div>
-  );
-};
+class SortButtons extends Component {
+  state = {
+    active: 1
+  };
+  render() {
+    return (
+      <div className="select-container">
+        <button
+          className={this.selectedCSS(0)}
+          onClick={() => {
+            this.toggle(0);
+            this.sortAlphabetically();
+          }}
+        >
+          sort <strong>alphabetically</strong>
+        </button>
+        <button
+          className={this.selectedCSS(1)}
+          onClick={() => {
+            this.toggle(1);
+            this.sortByPrice();
+          }}
+        >
+          sort by <strong>price</strong>
+        </button>
+        <button
+          className={this.selectedCSS(2)}
+          onClick={() => {
+            this.toggle(2);
+            this.sortByStar();
+          }}
+        >
+          sort by star <strong>rating</strong>
+        </button>
+      </div>
+    );
+  }
+
+  selectedCSS = button => {
+    if (this.state.active === button) {
+      return "sort-button-selected";
+    }
+    return "sort-button";
+  };
+
+  toggle = button => {
+    if (this.state.active === button) {
+      this.setState({ active: null });
+    } else {
+      this.setState({ active: button });
+    }
+  };
+
+  sortAlphabetically = () => {
+    const { data, sortHolidays } = this.props;
+    const result = sort.byName(data);
+    sortHolidays(result);
+  };
+
+  sortByPrice = () => {
+    const { data, sortHolidays } = this.props;
+    const result = sort.byPrice(data);
+    sortHolidays(result);
+  };
+
+  sortByStar = () => {
+    const { data, sortHolidays } = this.props;
+    const result = sort.byStar(data);
+    sortHolidays(result);
+  };
+}
 
 export default SortButtons;

@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="main-container">
-          <SortButtons />
+          <SortButtons data={data} sortHolidays={this.sortHolidays} />
           {data.map((datum, index) => (
             <Holiday key={datum.id} info={datum} />
           ))}
@@ -23,6 +23,11 @@ class App extends Component {
   componentDidMount() {
     this.setState({ data: Data });
   }
+
+  sortHolidays = sortedHolidays => {
+    console.log("lets reorder the data here then set state");
+    this.setState({ data: sortedHolidays });
+  };
 }
 
 export default App;

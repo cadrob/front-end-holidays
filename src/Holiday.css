@@ -5,6 +5,7 @@
   box-shadow: 0px 1px 1px 0px #888888;
   background-repeat: no-repeat;
   background-size: 700px 400px;
+  position: relative;
 }
 
 .holiday-top {
@@ -17,7 +18,7 @@
   border-right: solid #1a388a 2px;
   text-align: left;
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 600;
   background: #d5e2f1;
   opacity: 0.8;
   grid-area: title;
@@ -44,10 +45,12 @@
   font-size: 15px;
   font-weight: 500;
 }
-
-input[type="checkbox"] {
-  display: none;
+.wrap-collapsible {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
+
 .btn-collapse {
   display: flex;
   flex-direction: row;

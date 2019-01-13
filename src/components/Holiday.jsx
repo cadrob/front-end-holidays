@@ -6,6 +6,7 @@ import {
   faStar
 } from "@fortawesome/free-solid-svg-icons";
 import "../css/Holiday.css";
+import * as format from "../utils/format";
 import image1 from "../assets/image_01.png";
 import image2 from "../assets/image_02.png";
 import image3 from "../assets/image_03.png";
@@ -42,13 +43,14 @@ class Holiday extends Component {
             {name} {this.getStars(star)} <p>{hotel}</p>
           </header>
           <div className="holiday-price">
-            <p>holiday price</p>£{price}
+            <p>holiday price</p>£{format.currency(price)}
           </div>
         </div>
         <div className="wrap-collapsible">
           <button className="btn-collapse" onClick={this.handleCollapse}>
             <p>
-              <strong>{date} </strong>for <strong>{duration} </strong>from {""}
+              <strong>{format.date(date)} </strong>for{" "}
+              <strong>{duration} </strong>from {""}
               <strong>{depart_from}</strong>, {guests}
             </p>
             {!this.state.open && (

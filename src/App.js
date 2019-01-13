@@ -14,8 +14,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="main-container">
-          <SortButtons data={Data} amendHolidays={this.amendHolidays} />
           <Filters data={Data} amendHolidays={this.amendHolidays} />
+          <SortButtons data={Data} amendHolidays={this.amendHolidays} />
           {data.length &&
             data.map(datum => <Holiday key={datum.id} info={datum} />)}
           {!data.length && (

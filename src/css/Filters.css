@@ -1,4 +1,34 @@
 .filter-wrapper {
   display: inline-block;
   color: red;
+  padding: 5px;
+}
+
+.filter-wrapper select {
+  background-color: #b2ebf7;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  height: 29px;
+  color: #00aee1;
+  font-weight: 600;
+}
+.filter-wrapper label {
+  color: #1a388a;
+  font-weight: 600;
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #00aee1;
+  border-radius: 5px;
+  border: none;
+  background: #b2ebf7;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 10px;
 }

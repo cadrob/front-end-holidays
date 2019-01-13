@@ -9,9 +9,9 @@ class Filters extends Component {
     return (
       <div className="filter-wrapper">
         <form>
-          <label htmlFor="ddate">Departure Date:</label>
+          <label htmlFor="ddate">Departure Date </label>
           <input type="date" name="ddate" onChange={this.handleChange} />
-          <label htmlFor="airport">Departure Airport:</label>
+          <label htmlFor="airport">Departure Airport </label>
           <select onChange={this.handleChange} name="airport">
             <option value="">Any</option>
             {this.createAirportList()}

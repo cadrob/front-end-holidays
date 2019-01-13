@@ -1,9 +1,9 @@
 .App {
   text-align: center;
-  background: url(../src/assets/background.jpg);
+  background: url(../assets/background.jpg);
   background-attachment: fixed;
-  overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 20px;
 }
 
 .main-container {

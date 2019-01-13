@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "../Button.css";
-import "../App.css";
+import "../css/Button.css";
+import "../css/App.css";
 import * as sort from "../utils/sort";
 
 class SortButtons extends Component {
@@ -73,6 +73,10 @@ class SortButtons extends Component {
     const result = sort.byStar(data);
     amendHolidays(result);
   };
+
+  componentDidMount() {
+    this.sortByPrice();
+  }
 }
 
 export default SortButtons;

@@ -5,7 +5,7 @@ import {
   faAngleDown,
   faStar
 } from "@fortawesome/free-solid-svg-icons";
-import "../Holiday.css";
+import "../css/Holiday.css";
 import image1 from "../assets/image_01.png";
 import image2 from "../assets/image_02.png";
 import image3 from "../assets/image_03.png";
@@ -63,16 +63,16 @@ class Holiday extends Component {
             className={"collapse" + (this.state.open ? " in" : "")}
           >
             <p>
-              Overview If you're looking for something special for your holiday
-              to Tenerife, the five-star Costa Adeje Gran Hotel could be the
-              perfect choice. It's an impressive hotel in the resort of Costa
-              Adeje, with brilliant views over the Playa del Duque beach. The
-              area offers relaxation, nightlife and a lovely selection of shops
-              and restaurants. The hotel itself is a deluxe property, surrounded
-              by countryside, with amazing views of the Atlantic Ocean. This
-              stylish hotel is a great match for couples, families and friends
-              who are looking for a tranquil holiday with beautiful beaches and
-              lots of things to see and do.
+              Demo Text. Overview If you're looking for something special for
+              your holiday to Tenerife, the five-star Costa Adeje Gran Hotel
+              could be the perfect choice. It's an impressive hotel in the
+              resort of Costa Adeje, with brilliant views over the Playa del
+              Duque beach. The area offers relaxation, nightlife and a lovely
+              selection of shops and restaurants. The hotel itself is a deluxe
+              property, surrounded by countryside, with amazing views of the
+              Atlantic Ocean. This stylish hotel is a great match for couples,
+              families and friends who are looking for a tranquil holiday with
+              beautiful beaches and lots of things to see and do.
             </p>
             <button>BOOK NOW</button>
           </div>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "../src/css/App.css";
 import SortButtons from "../src/components/SortButtons";
 import Holiday from "../src/components/Holiday";
 import Data from "../src/assets/fakeHolidays.json";
@@ -11,26 +11,28 @@ class App extends Component {
   };
   render() {
     const { data } = this.state;
-    console.log(data);
     return (
       <div className="App">
         <div className="main-container">
-          <SortButtons data={data} amendHolidays={this.amendHolidays} />
+          <SortButtons data={Data} amendHolidays={this.amendHolidays} />
           <Filters data={Data} amendHolidays={this.amendHolidays} />
-          {data.map(datum => (
-            <Holiday key={datum.id} info={datum} />
-          ))}
+          {data.length &&
+            data.map(datum => <Holiday key={datum.id} info={datum} />)}
+          {!data.length && (
+            <p>Sorry there are no results matching this criteria</p>
+          )}
         </div>
       </div>
     );
-  }
-  componentDidMount() {
-    this.setState({ data: Data });
   }
 
   amendHolidays = ammendedHolidays => {
     this.setState({ data: ammendedHolidays });
   };
+
+  componentDidMount() {
+    this.setState({ data: Data });
+  }
 }
 
 export default App;

@@ -1,8 +1,8 @@
-export const currency = value => {
+export const formatCurrency = value => {
   return value.toLocaleString(navigator.language, { minimumFractionDigits: 2 });
 };
 
-export const date = date => {
+export const formatDate = date => {
   let newDate = date.split("-");
   const months = {
     "01": "January",

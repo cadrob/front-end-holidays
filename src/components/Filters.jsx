@@ -3,7 +3,7 @@ import "../css/Filters.css";
 
 class Filters extends Component {
   state = {
-    data: []
+    holidays: []
   };
   render() {
     return (
@@ -21,9 +21,15 @@ class Filters extends Component {
     );
   }
 
+  componentDidUpdate() {
+    if (!this.state.holidays.length)
+      this.setState({ holidays: this.props.holidays });
+  }
+
   createAirportList = () => {
-    const { data } = this.props;
-    const results = data.reduce((acc, holiday, index) => {
+    const { holidays } = this.state;
+
+    const results = holidays.reduce((acc, holiday, index) => {
       if (!acc.includes(holiday.depart_from))
         acc.push(
           <option key={holiday.depart_from} value={holiday.depart_from}>
@@ -36,23 +42,19 @@ class Filters extends Component {
   };
 
   handleChange = event => {
-    const { data, amendHolidays } = this.props;
+    const { holidays, amendHolidays } = this.props;
     const { value } = event.target;
     let results = [];
     if (event.target.type === "date") {
-      if (value) results = data.filter(holiday => holiday.date === value);
-      else results = data;
+      if (value) results = holidays.filter(holiday => holiday.date === value);
+      else results = holidays;
     } else {
       if (value)
-        results = data.filter(holiday => holiday.depart_from === value);
-      else results = data;
+        results = holidays.filter(holiday => holiday.depart_from === value);
+      else results = holidays;
     }
     amendHolidays(results);
   };
-
-  componentDidMount() {
-    this.setState({ data: this.props.data });
-  }
 }
 
 export default Filters;

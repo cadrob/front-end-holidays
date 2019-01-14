@@ -7,18 +7,23 @@ import Filters from "../src/components/Filters";
 
 class App extends Component {
   state = {
-    data: []
+    holidays: [],
+    selectedHolidays: []
   };
   render() {
-    const { data } = this.state;
+    const { holidays, selectedHolidays } = this.state;
     return (
       <div className="App">
         <div className="main-container">
-          <Filters data={Data} amendHolidays={this.amendHolidays} />
-          <SortButtons data={Data} amendHolidays={this.amendHolidays} />
-          {data.length &&
-            data.map(datum => <Holiday key={datum.id} info={datum} />)}
-          {!data.length && (
+          <Filters holidays={holidays} amendHolidays={this.amendHolidays} />
+          <SortButtons
+            holidays={selectedHolidays}
+            amendHolidays={this.amendHolidays}
+          />
+          {selectedHolidays.map(holiday => (
+            <Holiday key={holiday.id} info={holiday} />
+          ))}
+          {!selectedHolidays.length && (
             <p>Sorry there are no results matching this criteria</p>
           )}
         </div>
@@ -27,11 +32,11 @@ class App extends Component {
   }
 
   amendHolidays = ammendedHolidays => {
-    this.setState({ data: ammendedHolidays });
+    this.setState({ selectedHolidays: ammendedHolidays });
   };
 
   componentDidMount() {
-    this.setState({ data: Data });
+    this.setState({ holidays: Data, selectedHolidays: Data });
   }
 }
 

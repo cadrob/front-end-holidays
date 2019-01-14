@@ -1,5 +1,6 @@
 .filter-wrapper {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   color: red;
   padding: 5px;
 }

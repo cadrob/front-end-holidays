@@ -57,20 +57,20 @@ class SortButtons extends Component {
   };
 
   sortAlphabetically = () => {
-    const { data, amendHolidays } = this.props;
-    const result = sort.byName(data);
+    const { holidays, amendHolidays } = this.props;
+    const result = sort.byName(holidays);
     amendHolidays(result);
   };
 
   sortByPrice = () => {
-    const { data, amendHolidays } = this.props;
-    const result = sort.byPrice(data);
+    const { holidays, amendHolidays } = this.props;
+    const result = sort.byPrice(holidays);
     amendHolidays(result);
   };
 
   sortByStar = () => {
-    const { data, amendHolidays } = this.props;
-    const result = sort.byStar(data);
+    const { holidays, amendHolidays } = this.props;
+    const result = sort.byStar(holidays);
     amendHolidays(result);
   };
 

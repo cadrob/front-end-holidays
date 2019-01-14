@@ -1,4 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Front-end-holidays
+
+### About
+
+This is a simple client side solution to a holiday search page. Includes basic sort and filter functionality with collapsable content.
+
+### Prerequisites
+
+- Node.js
+- React.js
+
+Dependencies:
+
+```
+    react: ^16.7.0
+    react-dom: ^16.7.0
+    react-scripts: 2.1.3
+    @fortawesome/fontawesome-svg-core: ^1.2.12
+    @fortawesome/free-solid-svg-icons: ^5.6.3
+    @fortawesome/react-fontawesome: ^0.1.3
 
 ## Available Scripts
 
@@ -66,3 +85,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```

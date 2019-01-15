@@ -5,34 +5,34 @@ import * as sort from "../utils/sort";
 
 class SortButtons extends Component {
   state = {
-    active: 1,
+    active: null,
     defaultSort: false
   };
   render() {
     return (
       <div className="select-container">
         <button
-          className={this.selectedCSS(0)}
+          className={this.selectedCSS(1)}
           onClick={() => {
-            this.toggle(0);
+            this.toggle(1);
             this.sortAlphabetically();
           }}
         >
           sort <strong>alphabetically</strong>
         </button>
         <button
-          className={this.selectedCSS(1)}
+          className={this.selectedCSS(2)}
           onClick={() => {
-            this.toggle(1);
+            this.toggle(2);
             this.sortByPrice();
           }}
         >
           sort by <strong>price</strong>
         </button>
         <button
-          className={this.selectedCSS(2)}
+          className={this.selectedCSS(3)}
           onClick={() => {
-            this.toggle(2);
+            this.toggle(3);
             this.sortByStar();
           }}
         >
@@ -79,9 +79,9 @@ class SortButtons extends Component {
     this.sortByPrice();
   }
   componentDidUpdate() {
-    if (!this.state.defaultSort) {
+    if (!this.state.active) {
       this.sortByPrice();
-      this.setState({ defaultSort: true });
+      this.setState({ active: 2 });
     }
   }
 }

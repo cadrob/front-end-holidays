@@ -5,7 +5,8 @@ import * as sort from "../utils/sort";
 
 class SortButtons extends Component {
   state = {
-    active: 1
+    active: 1,
+    defaultSort: false
   };
   render() {
     return (
@@ -76,6 +77,12 @@ class SortButtons extends Component {
 
   componentDidMount() {
     this.sortByPrice();
+  }
+  componentDidUpdate() {
+    if (!this.state.defaultSort) {
+      this.sortByPrice();
+      this.setState({ defaultSort: true });
+    }
   }
 }
 
